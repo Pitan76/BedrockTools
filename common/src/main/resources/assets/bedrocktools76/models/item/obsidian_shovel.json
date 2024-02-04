@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "bedrocktools76:item/tools/obsidian_shovel"
+  }
+}

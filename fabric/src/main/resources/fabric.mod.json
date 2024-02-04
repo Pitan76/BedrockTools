@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "bedrocktools76",
+  "version": "${version}",
+  "name": "${mod_name}",
+  "description": "",
+  "authors": [
+    "Pitan"
+  ],
+  "contact": {
+    "website": "https://www.curseforge.com/minecraft/mc-mods/bedrock-tools76",
+    "repo": "https://github.com/Pitan76/bedrock-tools76",
+    "issues": "https://github.com/Pitan76/bedrock-tools76/issues"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.pitan76.bedrocktools.fabric.BedrockToolsFabric"
+    ],
+    "client": [
+      "net.pitan76.bedrocktools.fabric.BedrockToolsClientFabric"
+    ]
+  },
+  "mixins": [
+    "bedrocktools76.mixins.json",
+    "bedrocktools76-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": "*",
+    "minecraft": "*",
+    "mcpitanlibarch": ">1.8.5"
+  }
+}
