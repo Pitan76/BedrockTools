@@ -3,7 +3,7 @@
   "id": "bedrocktools76",
   "version": "${version}",
   "name": "${mod_name}",
-  "description": "",
+  "description": "Bedrock Tools is a mod that adds tools from bedrock and obsidian to the game.",
   "authors": [
     "Pitan"
   ],
