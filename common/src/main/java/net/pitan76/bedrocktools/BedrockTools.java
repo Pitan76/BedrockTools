@@ -1,6 +1,7 @@
 package net.pitan76.bedrocktools;
 
 import dev.architectury.event.EventResult;
+import ml.pkom.mcpitanlibarch.api.command.CommandRegistry;
 import ml.pkom.mcpitanlibarch.api.event.v0.AttackEntityEventRegistry;
 import ml.pkom.mcpitanlibarch.api.item.CreativeTabBuilder;
 import ml.pkom.mcpitanlibarch.api.registry.ArchRegistry;
@@ -8,6 +9,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
+import net.pitan76.bedrocktools.cmd.BedrockToolsCommand;
 import net.pitan76.bedrocktools.item.CreativeShotKillItem;
 
 public class BedrockTools {
@@ -33,6 +35,8 @@ public class BedrockTools {
         registry.registerItem(id("bedrock_shovel"), () -> Items.BEDROCK_SHOVEL);
         registry.registerItem(id("bedrock_hoe"), () -> Items.BEDROCK_HOE);
 
+        CommandRegistry.register("bedrocktools76", new BedrockToolsCommand());
+
         registry.allRegister();
 
         AttackEntityEventRegistry.register(
@@ -43,6 +47,8 @@ public class BedrockTools {
                     return EventResult.interruptTrue();
                 }
         );
+
+
     }
 
     public static Identifier id(String name) {
