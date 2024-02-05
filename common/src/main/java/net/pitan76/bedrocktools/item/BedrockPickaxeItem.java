@@ -1,27 +1,25 @@
 package net.pitan76.bedrocktools.item;
 
 import ml.pkom.mcpitanlibarch.api.item.CompatibleItemSettings;
-import ml.pkom.mcpitanlibarch.api.item.ExtendItemProvider;
+import ml.pkom.mcpitanlibarch.api.item.tool.CompatiblePickaxeItem;
+import ml.pkom.mcpitanlibarch.api.item.tool.CompatibleToolMaterial;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.item.ToolMaterial;
-import net.minecraft.util.UseAction;
 
-public class BedrockPickaxeItem extends PickaxeItem implements ExtendItemProvider, CreativeShotKillItem {
-    public BedrockPickaxeItem(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, CompatibleItemSettings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings.build());
+public class BedrockPickaxeItem extends CompatiblePickaxeItem implements CreativeShotKillItem {
+    public BedrockPickaxeItem(CompatibleToolMaterial toolMaterial, int attackDamage, float attackSpeed, CompatibleItemSettings settings) {
+        super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
     @Override
-    public boolean isSuitableFor(BlockState state) {
+    public boolean overrideIsSuitableFor(BlockState state) {
         if (state.isOf(Blocks.BEDROCK)) return true;
-        return super.isSuitableFor(state);
+        return super.overrideIsSuitableFor(state);
     }
 
     @Override
-    public float getMiningSpeedMultiplier(ItemStack stack, BlockState state) {
-        return super.getMiningSpeedMultiplier(stack, state);
+    public float overrideGetMiningSpeedMultiplier(ItemStack stack, BlockState state) {
+        return super.overrideGetMiningSpeedMultiplier(stack, state);
     }
 }

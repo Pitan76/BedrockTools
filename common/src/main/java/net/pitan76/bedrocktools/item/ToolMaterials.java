@@ -1,11 +1,12 @@
 package net.pitan76.bedrocktools.item;
 
+import ml.pkom.mcpitanlibarch.api.item.tool.CompatibleToolMaterial;
 import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.pitan76.bedrocktools.Config;
 
-public enum ToolMaterials implements ToolMaterial {
+public enum ToolMaterials implements CompatibleToolMaterial {
 
     OBSIDIAN(Ingredient.ofItems(Items.OBSIDIAN)),
     BEDROCK(Ingredient.ofItems(Items.BEDROCK)),

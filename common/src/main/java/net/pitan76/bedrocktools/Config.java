@@ -18,13 +18,13 @@ public class Config {
         initialized = true;
         setConfigDir(configDir);
 
-        if (FileControl.fileExists(getConfigFile()))
+        if (FileControl.fileExists(getConfigFile())) {
             config.load(getConfigFile());
-        else
+            fixConfig();
+        } else {
+            fixConfig();
             config.save(getConfigFile());
-
-        // 既存の設定以外をデフォルト設定にする (Set to default settings except for existing settings)
-        fixConfig();
+        }
     }
 
     public static File getConfigFile() {
@@ -47,7 +47,7 @@ public class Config {
         return false;
     }
 
-    public static void fixConfig() {
+    public static boolean fixConfig() {
         if (!config.has("toolmaterials.obsidian.miningLevel"))
             config.setInt("toolmaterials.obsidian.miningLevel", 2);
         if (!config.has("toolmaterials.obsidian.itemDurability"))
@@ -69,6 +69,8 @@ public class Config {
             config.setDouble("toolmaterials.bedrock.attackDamage", 3.5);
         if (!config.has("toolmaterials.bedrock.enchantability"))
             config.setInt("toolmaterials.bedrock.enchantability", 3);
+
+        return true;
     }
 
     public static void save() {
