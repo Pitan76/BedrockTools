@@ -1,7 +1,7 @@
 package net.pitan76.bedrocktools.fabric;
 
-import net.pitan76.bedrocktools.client.BedrockToolsClient;
 import net.fabricmc.api.ClientModInitializer;
+import net.pitan76.bedrocktools.client.BedrockToolsClient;
 
 public class BedrockToolsClientFabric implements ClientModInitializer {
     @Override

@@ -1,11 +1,11 @@
 package net.pitan76.bedrocktools.item;
 
-import ml.pkom.mcpitanlibarch.api.item.CompatibleItemSettings;
-import ml.pkom.mcpitanlibarch.api.item.tool.CompatiblePickaxeItem;
-import ml.pkom.mcpitanlibarch.api.item.tool.CompatibleToolMaterial;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
+import net.pitan76.mcpitanlib.api.item.CompatibleItemSettings;
+import net.pitan76.mcpitanlib.api.item.tool.CompatiblePickaxeItem;
+import net.pitan76.mcpitanlib.api.item.tool.CompatibleToolMaterial;
 
 public class BedrockPickaxeItem extends CompatiblePickaxeItem implements CreativeShotKillItem {
     public BedrockPickaxeItem(CompatibleToolMaterial toolMaterial, int attackDamage, float attackSpeed, CompatibleItemSettings settings) {

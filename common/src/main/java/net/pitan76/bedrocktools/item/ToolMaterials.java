@@ -1,10 +1,9 @@
 package net.pitan76.bedrocktools.item;
 
-import ml.pkom.mcpitanlibarch.api.item.tool.CompatibleToolMaterial;
 import net.minecraft.item.Items;
-import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 import net.pitan76.bedrocktools.Config;
+import net.pitan76.mcpitanlib.api.item.tool.CompatibleToolMaterial;
 
 public enum ToolMaterials implements CompatibleToolMaterial {
 

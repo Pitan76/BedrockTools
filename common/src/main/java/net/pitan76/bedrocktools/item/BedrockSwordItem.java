@@ -1,10 +1,10 @@
 package net.pitan76.bedrocktools.item;
 
-import ml.pkom.mcpitanlibarch.api.item.CompatibleItemSettings;
-import ml.pkom.mcpitanlibarch.api.item.tool.CompatibleSwordItem;
-import ml.pkom.mcpitanlibarch.api.item.tool.CompatibleToolMaterial;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
+import net.pitan76.mcpitanlib.api.item.CompatibleItemSettings;
+import net.pitan76.mcpitanlib.api.item.tool.CompatibleSwordItem;
+import net.pitan76.mcpitanlib.api.item.tool.CompatibleToolMaterial;
 
 public class BedrockSwordItem extends CompatibleSwordItem implements CreativeShotKillItem {
 

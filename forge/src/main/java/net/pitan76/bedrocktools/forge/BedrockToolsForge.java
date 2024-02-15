@@ -1,12 +1,12 @@
 package net.pitan76.bedrocktools.forge;
 
 import dev.architectury.platform.forge.EventBuses;
-import ml.pkom.mcpitanlibarch.api.util.PlatformUtil;
-import net.minecraftforge.fml.loading.FMLPaths;
-import net.pitan76.bedrocktools.BedrockTools;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLPaths;
+import net.pitan76.bedrocktools.BedrockTools;
 import net.pitan76.bedrocktools.Config;
+import net.pitan76.mcpitanlib.api.util.PlatformUtil;
 
 @Mod(BedrockTools.MOD_ID)
 public class BedrockToolsForge {

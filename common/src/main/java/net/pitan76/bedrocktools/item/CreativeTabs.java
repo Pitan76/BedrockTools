@@ -1,9 +1,9 @@
 package net.pitan76.bedrocktools.item;
 
-import ml.pkom.mcpitanlibarch.api.item.CreativeTabBuilder;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.pitan76.bedrocktools.Items;
+import net.pitan76.mcpitanlib.api.item.CreativeTabBuilder;
 
 import static net.pitan76.bedrocktools.BedrockTools.id;
 

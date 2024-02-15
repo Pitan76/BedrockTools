@@ -1,6 +1,5 @@
 package net.pitan76.bedrocktools.mixin;
 
-import ml.pkom.mcpitanlibarch.api.entity.Player;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -11,6 +10,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.pitan76.bedrocktools.Items;
 import net.pitan76.bedrocktools.item.BedrockPickaxeItem;
+import net.pitan76.mcpitanlib.api.entity.Player;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

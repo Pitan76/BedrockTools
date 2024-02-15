@@ -1,18 +1,18 @@
 package net.pitan76.bedrocktools;
 
 import dev.architectury.event.EventResult;
-import ml.pkom.mcpitanlibarch.api.command.CommandRegistry;
-import ml.pkom.mcpitanlibarch.api.event.v0.AttackEntityEventRegistry;
-import ml.pkom.mcpitanlibarch.api.registry.ArchRegistry;
 import net.minecraft.util.Identifier;
 import net.pitan76.bedrocktools.cmd.BedrockToolsCommand;
 import net.pitan76.bedrocktools.item.CreativeShotKillItem;
 import net.pitan76.bedrocktools.item.CreativeTabs;
+import net.pitan76.mcpitanlib.api.command.CommandRegistry;
+import net.pitan76.mcpitanlib.api.event.v0.AttackEntityEventRegistry;
+import net.pitan76.mcpitanlib.api.registry.CompatRegistry;
 
 public class BedrockTools {
     public static final String MOD_ID = "bedrocktools76";
 
-    public static final ArchRegistry registry = ArchRegistry.createRegistry(MOD_ID);
+    public static final CompatRegistry registry = CompatRegistry.createRegistry(MOD_ID);
 
     public static void init() {
         registry.registerItemGroup(id("tools"), () -> CreativeTabs.BEDROCK_TOOLS_GROUP);

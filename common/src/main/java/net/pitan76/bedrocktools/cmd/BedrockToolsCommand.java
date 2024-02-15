@@ -1,11 +1,11 @@
 package net.pitan76.bedrocktools.cmd;
 
-import ml.pkom.mcpitanlibarch.api.command.CommandSettings;
-import ml.pkom.mcpitanlibarch.api.command.ConfigCommand;
-import ml.pkom.mcpitanlibarch.api.command.LiteralCommand;
-import ml.pkom.mcpitanlibarch.api.event.ServerCommandEvent;
-import ml.pkom.mcpitanlibarch.api.util.TextUtil;
 import net.pitan76.bedrocktools.Config;
+import net.pitan76.mcpitanlib.api.command.CommandSettings;
+import net.pitan76.mcpitanlib.api.command.ConfigCommand;
+import net.pitan76.mcpitanlib.api.command.LiteralCommand;
+import net.pitan76.mcpitanlib.api.event.ServerCommandEvent;
+import net.pitan76.mcpitanlib.api.util.TextUtil;
 
 public class BedrockToolsCommand extends LiteralCommand {
     @Override
