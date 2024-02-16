@@ -1,12 +1,23 @@
 package net.pitan76.bedrocktools;
 
 import dev.architectury.event.EventResult;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.pitan76.bedrocktools.cmd.BedrockToolsCommand;
+import net.pitan76.bedrocktools.item.BedrockPickaxeItem;
 import net.pitan76.bedrocktools.item.CreativeShotKillItem;
 import net.pitan76.bedrocktools.item.CreativeTabs;
 import net.pitan76.mcpitanlib.api.command.CommandRegistry;
+import net.pitan76.mcpitanlib.api.entity.Player;
+import net.pitan76.mcpitanlib.api.event.block.result.BlockBreakResult;
 import net.pitan76.mcpitanlib.api.event.v0.AttackEntityEventRegistry;
+import net.pitan76.mcpitanlib.api.event.v1.BlockEventRegistry;
 import net.pitan76.mcpitanlib.api.registry.CompatRegistry;
 
 public class BedrockTools {
@@ -40,6 +51,25 @@ public class BedrockTools {
                     return EventResult.interruptTrue();
                 }
         );
+
+        BlockEventRegistry.register(e -> {
+            Player player = e.player;
+            ItemStack stack = player.getStackInHand(Hand.MAIN_HAND);
+            if (!(stack.getItem() instanceof BedrockPickaxeItem) || player.isCreative()) return new BlockBreakResult(e.state);
+            BlockState state = e.state;
+            World world = e.world;
+            BlockPos pos = e.pos;
+
+            if (state.getBlock() == Blocks.BEDROCK)
+                Block.dropStack(world, pos, new ItemStack(Blocks.BEDROCK));
+            if (state.getBlock() == Blocks.END_PORTAL_FRAME)
+                Block.dropStack(world, pos, new ItemStack(Blocks.END_PORTAL_FRAME));
+
+            if (stack.getItem() == Items.OBSIDIAN_PICKAXE) {
+                stack.damage(999, player.getPlayerEntity(), (p) -> p.sendToolBreakStatus(Hand.MAIN_HAND));
+            }
+            return new BlockBreakResult(e.state);
+        });
     }
 
     public static Identifier id(String name) {
