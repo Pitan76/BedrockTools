@@ -17,7 +17,7 @@ import net.pitan76.mcpitanlib.api.command.CommandRegistry;
 import net.pitan76.mcpitanlib.api.entity.Player;
 import net.pitan76.mcpitanlib.api.event.block.result.BlockBreakResult;
 import net.pitan76.mcpitanlib.api.event.v0.AttackEntityEventRegistry;
-import net.pitan76.mcpitanlib.api.event.v1.BlockEventRegistry;
+import net.pitan76.mcpitanlib.api.event.v2.BlockEventRegistry;
 import net.pitan76.mcpitanlib.api.registry.CompatRegistry;
 
 public class BedrockTools {
@@ -26,7 +26,7 @@ public class BedrockTools {
     public static final CompatRegistry registry = CompatRegistry.createRegistry(MOD_ID);
 
     public static void init() {
-        registry.registerItemGroup(id("tools"), () -> CreativeTabs.BEDROCK_TOOLS_GROUP);
+        registry.registerItemGroup(id("tools"), CreativeTabs.BEDROCK_TOOLS_GROUP);
 
         registry.registerItem(id("obsidian_sword"), () -> Items.OBSIDIAN_SWORD);
         registry.registerItem(id("obsidian_axe"), () -> Items.OBSIDIAN_AXE);
@@ -52,7 +52,7 @@ public class BedrockTools {
                 }
         );
 
-        BlockEventRegistry.register(e -> {
+        BlockEventRegistry.ON_BREAK.register(e -> {
             Player player = e.player;
             ItemStack stack = player.getStackInHand(Hand.MAIN_HAND);
             if (!(stack.getItem() instanceof BedrockPickaxeItem) || player.isCreative()) return new BlockBreakResult(e.state);
@@ -65,9 +65,9 @@ public class BedrockTools {
             if (state.getBlock() == Blocks.END_PORTAL_FRAME)
                 Block.dropStack(world, pos, new ItemStack(Blocks.END_PORTAL_FRAME));
 
-            if (stack.getItem() == Items.OBSIDIAN_PICKAXE) {
+            if (stack.getItem() == Items.OBSIDIAN_PICKAXE)
                 stack.damage(999, player.getPlayerEntity(), (p) -> p.sendToolBreakStatus(Hand.MAIN_HAND));
-            }
+
             return new BlockBreakResult(e.state);
         });
     }

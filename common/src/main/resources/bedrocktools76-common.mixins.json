@@ -4,8 +4,7 @@
   "package": "net.pitan76.bedrocktools.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "AbstractBlockMixin",
-    "BlockMixin"
+    "AbstractBlockMixin"
   ],
   "client": [
   ],
