@@ -18,27 +18,27 @@ public enum ToolMaterials implements CompatibleToolMaterial {
         this.repairIngredient = repairIngredient;
     }
 
-    public int getDurability() {
+    public int getCompatDurability() {
         return Config.config.getInt(configPath + ".itemDurability");
     }
 
-    public float getMiningSpeedMultiplier() {
+    public float getCompatMiningSpeedMultiplier() {
         return (float) Config.config.getDouble(configPath + ".miningSpeed");
     }
 
-    public float getAttackDamage() {
+    public float getCompatAttackDamage() {
         return (float) Config.config.getDouble(configPath + ".attackDamage");
     }
 
-    public int getMiningLevel() {
+    public int getCompatMiningLevel() {
         return Config.config.getInt(configPath + ".miningLevel");
     }
 
-    public int getEnchantability() {
+    public int getCompatEnchantability() {
         return Config.config.getInt(configPath + ".enchantability");
     }
 
-    public Ingredient getRepairIngredient() {
+    public Ingredient getCompatRepairIngredient() {
         return this.repairIngredient;
     }
 }
