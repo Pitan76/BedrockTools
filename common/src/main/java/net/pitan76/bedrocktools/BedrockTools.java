@@ -19,6 +19,7 @@ import net.pitan76.mcpitanlib.api.event.block.result.BlockBreakResult;
 import net.pitan76.mcpitanlib.api.event.v0.AttackEntityEventRegistry;
 import net.pitan76.mcpitanlib.api.event.v2.BlockEventRegistry;
 import net.pitan76.mcpitanlib.api.registry.CompatRegistry;
+import net.pitan76.mcpitanlib.api.util.IdentifierUtil;
 
 public class BedrockTools {
     public static final String MOD_ID = "bedrocktools76";
@@ -73,6 +74,6 @@ public class BedrockTools {
     }
 
     public static Identifier id(String name) {
-        return new Identifier(MOD_ID, name);
+        return IdentifierUtil.id(MOD_ID, name);
     }
 }
