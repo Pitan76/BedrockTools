@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -20,6 +21,7 @@ import net.pitan76.mcpitanlib.api.event.v0.AttackEntityEventRegistry;
 import net.pitan76.mcpitanlib.api.event.v2.BlockEventRegistry;
 import net.pitan76.mcpitanlib.api.registry.CompatRegistry;
 import net.pitan76.mcpitanlib.api.util.IdentifierUtil;
+import net.pitan76.mcpitanlib.api.util.ItemStackUtil;
 
 public class BedrockTools {
     public static final String MOD_ID = "bedrocktools76";
@@ -66,8 +68,8 @@ public class BedrockTools {
             if (state.getBlock() == Blocks.END_PORTAL_FRAME)
                 Block.dropStack(world, pos, new ItemStack(Blocks.END_PORTAL_FRAME));
 
-            if (stack.getItem() == Items.OBSIDIAN_PICKAXE)
-                stack.damage(999, player.getPlayerEntity(), (p) -> p.sendToolBreakStatus(Hand.MAIN_HAND));
+            if (stack.getItem() == Items.OBSIDIAN_PICKAXE && !player.isClient())
+                ItemStackUtil.damage(stack, 999, (ServerPlayerEntity) player.getPlayerEntity());
 
             return new BlockBreakResult(e.state);
         });
