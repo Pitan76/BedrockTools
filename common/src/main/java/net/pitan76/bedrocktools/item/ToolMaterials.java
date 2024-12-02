@@ -2,10 +2,12 @@ package net.pitan76.bedrocktools.item;
 
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
+import net.pitan76.bedrocktools.BedrockTools;
 import net.pitan76.bedrocktools.Config;
-import net.pitan76.mcpitanlib.api.item.tool.CompatibleToolMaterial;
+import net.pitan76.mcpitanlib.api.item.v3.CompatToolMaterial;
+import net.pitan76.mcpitanlib.api.tag.item.RepairIngredientTag;
 
-public enum ToolMaterials implements CompatibleToolMaterial {
+public enum ToolMaterials implements CompatToolMaterial {
 
     OBSIDIAN(Ingredient.ofItems(Items.OBSIDIAN)),
     BEDROCK(Ingredient.ofItems(Items.BEDROCK)),
@@ -40,5 +42,10 @@ public enum ToolMaterials implements CompatibleToolMaterial {
 
     public Ingredient getCompatRepairIngredient() {
         return this.repairIngredient;
+    }
+
+    @Override
+    public RepairIngredientTag getRepairIngredientTag() {
+        return new RepairIngredientTag(BedrockTools._id(this.name().toLowerCase() + "_tool_materials"));
     }
 }

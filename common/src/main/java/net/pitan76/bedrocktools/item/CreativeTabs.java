@@ -1,12 +1,12 @@
 package net.pitan76.bedrocktools.item;
 
-import net.minecraft.item.ItemStack;
 import net.pitan76.bedrocktools.Items;
 import net.pitan76.mcpitanlib.api.item.CreativeTabBuilder;
+import net.pitan76.mcpitanlib.api.util.ItemStackUtil;
 
-import static net.pitan76.bedrocktools.BedrockTools.id;
+import static net.pitan76.bedrocktools.BedrockTools._id;
 
 public class CreativeTabs {
-    public static final CreativeTabBuilder BEDROCK_TOOLS_GROUP = CreativeTabBuilder.create(id("tools")).setIcon(() -> new ItemStack(Items.BEDROCK_PICKAXE, 1));
+    public static final CreativeTabBuilder BEDROCK_TOOLS_GROUP = CreativeTabBuilder.create(_id("tools")).setIcon(() -> ItemStackUtil.create(Items.BEDROCK_PICKAXE, 1));
 
 }
